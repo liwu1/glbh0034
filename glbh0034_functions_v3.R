@@ -139,7 +139,7 @@ plot_scr2 <- function(plot.age.profile,district,colour) {
   
   lambda1_lab <- as.numeric(round(p.lambda1,4))
   lambda2_lab <- round(p.lambda2,4)
-  legend("topleft",legend=c(paste0("lambda1: ",lambda1_lab),paste0("lambda2: ",lambda2_lab)),bty="n")
+  legend("bottomright",legend=c(paste0("lambda1: ",lambda1_lab),paste0("lambda2: ",lambda2_lab)),bty="n",cex=0.8)
   
 }
 
