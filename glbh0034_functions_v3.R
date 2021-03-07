@@ -100,8 +100,8 @@ plot_scr <- function(plot.age.profile,district,colour) {
   lines(age_vector,plot.pred$seroprev,col=colour,lwd=2)
   
   lambda_lab <- round(p.lambda.rcm1,4)
-  text(20,0.2,bquote(lambda*": "*.(round(p.lambda.rcm1,3))*" ["*.(round(p.lambda.rcm1_li,3))*" - "*.(round(p.lambda.rcm1_ui,3))*"]"),adj=0,cex=1)
-  text(20,0.14,bquote(rho*": "*.(round(p.rho.rcm1,3))),adj=0,cex=1)
+  text(10,0.2,bquote(lambda*": "*.(round(p.lambda.rcm1,3))*" ["*.(round(p.lambda.rcm1_li,3))*" - "*.(round(p.lambda.rcm1_ui,3))*"]"),adj=0,cex=1)
+  text(10,0.14,bquote(rho*": "*.(round(p.rho.rcm1,3))),adj=0,cex=1)
   
 }
 
