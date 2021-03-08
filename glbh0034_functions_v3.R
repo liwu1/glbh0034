@@ -76,7 +76,7 @@ plot_seroprev <- function(plot.age.profile,district,colour) {
   
 }
 
-plot_scr <- function(plot.age.profile,district,colour,scr_fit) {
+plot_scr <- function(plot.age.profile,district,colour,scr_fit$estimates) {
   
   if (district=="Jinja") row <- 1
   if (district=="Kanungu") row <- 2
