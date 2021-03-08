@@ -122,7 +122,7 @@ plot_scr <- function(plot.age.profile,district,colour,scr_fit) {
   
 }
 
-plot_scr2 <- function(plot.age.profile,district,colour) {
+plot_scr2 <- function(plot.age.profile,district,colour,scr_fit2) {
   
   max.age <- max(plot.age.profile$age.profiles[,2])+5
   age_vector <- c(1:max.age)
@@ -132,10 +132,10 @@ plot_scr2 <- function(plot.age.profile,district,colour) {
   seroprev_y_li <- plot.age.profile$age.profiles[,4]
   seroprev_y_ui <- plot.age.profile$age.profiles[,5]
   
-  p.lambda1 <- scr_fit2$estimates["lambda1"]
-  p.lambda2 <- scr_fit2$estimates["lambda2"]
-  p.rho <- scr_fit2$estimates["rho"]
-  p.time <- scr_fit2$estimates["time.of.change"]
+  p.lambda1 <- scr_fit2["lambda1"]
+  p.lambda2 <- scr_fit2["lambda2"]
+  p.rho <- scr_fit2["rho"]
+  p.time <- scr_fit2["time.of.change"]
   
   plot.lambda <- unlist(c(rep(p.lambda1,max.age-p.time),rep(p.lambda2,p.time)))
   plot.rho <- unlist(rep(p.rho,max.age))
