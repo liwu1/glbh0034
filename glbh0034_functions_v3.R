@@ -10,6 +10,23 @@ require(scales)
 ## finite mixture model function ##
 ###################################
 
+plot_fmm1 <- function(data,mu1,sig1,mu2,sig2,cutoff,plot_x,gauss1a,gauss2a) {
+  
+  x_axis <- c(0.0001,0.001,0.01,0.05,0.1,0.5,1,1.5,2,4)
+  log_axis <- log(x_axis)
+  
+  hist(log(data$optical_density),breaks=35,main="seropositivity threshold\n(finite mixture model)",cex.main=1,col="grey",border="white",
+       xlab="optical density (OD)\n(log scale)",freq=F,ylim=c(0,0.5), xlim=c(-8,4), axes=F,cex.lab=0.9)
+  axis(side=1,at=log_axis,labels=x_axis,cex.axis=0.8)
+  axis(side=2,at=seq(0,0.5,0.1),cex.axis=0.8)
+  abline(v=cutoff,col="red",lwd=2)
+  abline(v=mu1,col="blue")
+  lines(plot_x,gauss1a,col="blue")
+  legend("topleft",legend=c(paste("sero-positive >",round(exp(cutoff),2), "OD"),"negative population"),
+         col=c("red","blue"),lty=1, bty="n", cex=0.75, seg.len=1)
+  
+}
+
 plot_fmm <- function(data,mu1,sig1,mu2,sig2,cutoff) {
   
   plot_x <- seq( min(log(data$optical_density),na.rm=T),max(log(data$optical_density),na.rm=T),0.1)
