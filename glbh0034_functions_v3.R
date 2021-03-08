@@ -10,7 +10,7 @@ require(scales)
 ## finite mixture model function ##
 ###################################
 
-plot_fmm <- function(data) {
+plot_fmm <- function(data,mu1,sig1,mu2,sig2) {
   
   plot_x <- seq( min(log(data$optical_density),na.rm=T),max(log(data$optical_density),na.rm=T),0.1)
   
