@@ -76,7 +76,7 @@ plot_seroprev <- function(plot.age.profile,district,colour) {
   
 }
 
-plot_scr <- function(plot.age.profile,district,colour,scr_fit$estimates) {
+plot_scr <- function(plot.age.profile,district,colour,scr_fit) {
   
   if (district=="Jinja") row <- 1
   if (district=="Kanungu") row <- 2
@@ -90,10 +90,10 @@ plot_scr <- function(plot.age.profile,district,colour,scr_fit$estimates) {
   seroprev_y_li <- plot.age.profile$age.profiles[,4]
   seroprev_y_ui <- plot.age.profile$age.profiles[,5]
   
-  p.lambda.rcm1 <- scr_fit$estimates[row,"lambda.est"]
-  p.lambda.rcm1_li <- scr_fit$estimates[row,"lambda.lower"]
-  p.lambda.rcm1_ui <- scr_fit$estimates[row,"lambda.upper"]
-  p.rho.rcm1 <- scr_fit$estimates[row,"rho.est"]
+  p.lambda.rcm1 <- scr_fit[row,"lambda.est"]
+  p.lambda.rcm1_li <- scr_fit[row,"lambda.lower"]
+  p.lambda.rcm1_ui <- scr_fit[row,"lambda.upper"]
+  p.rho.rcm1 <- scr_fit[row,"rho.est"]
   
   plot.pred <- theo.seroprev(rep(p.lambda.rcm1,max.age),rep(p.rho.rcm1,max.age))
   plot.pred_li <- theo.seroprev(rep(p.lambda.rcm1_li,max.age),rep(p.rho.rcm1,max.age))
